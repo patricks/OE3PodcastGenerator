@@ -36,8 +36,6 @@ downloadManager.download { result in
         os_log(.debug, "File duration in seconds: %{public}f", audioDuration)
 
         let xmlDocument = feedManager.createFeed(fileLength: fileSize, audioDuration: audioDuration)
-        //        let xmlString = feedManager.createStringFromXMLDocument(xmlDocument)
-        //        print("🐞: xml: \(xmlString)")
 
         if let desktopDirectory = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
             let filePath = desktopDirectory.appendingPathComponent("podcast.xml")
@@ -59,4 +57,3 @@ downloadManager.download { result in
 }
 
 RunLoop.main.run()
-
